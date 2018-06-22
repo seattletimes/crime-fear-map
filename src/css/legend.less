@@ -37,6 +37,7 @@ aside.legend {
       }
     }
     .block {
+      border: 1px solid @df-border-gray;
       width: 2em;
       height: 12px;
       display: inline-block;
@@ -60,5 +61,10 @@ aside.legend {
     text-transform: uppercase;
     display: inline-block;
     float: right;
+
+    @media @tablet {
+      float: none;
+      display: block;
+    }
   }
 }
