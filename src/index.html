@@ -23,23 +23,21 @@
           sodales risus. </p>
       </section>
 
+      <% var palette = ['#fcfbfd','#efedf5','#dadaeb','#bcbddc','#9e9ac8','#807dba','#6a51a3','#54278f','#3f007d'] %>
+      <div class="adjacent-maps">
       <div class="aspect-ratio-outer">
         <div class="aspect-ratio-inner">
 
           <leaflet-map zoom=10.5>
             <map-options>{ "zoomSnap": 0.5 }</map-options>
             <tile-layer layer="cartoPositronBlank"></tile-layer>
-            <geo-json>
-              <geo-data>
-                <%= t.include("crime-fear.geo.json") %>
-              </geo-data>
-              <geo-style>{ "weight": 1, "color": "#000", "opacity":0.2, "fillOpacity":0.6 }</geo-style>
-              <% var palette = ['#fcfbfd','#efedf5','#dadaeb','#bcbddc','#9e9ac8','#807dba','#6a51a3','#54278f','#3f007d'] %>
+            <geo-json src="assets/crime-fear.geo.json">
+              <geo-style>{ "weight": 1, "color": "#000", "opacity":0.2, "fillOpacity":0.7 }</geo-style>
               <geo-palette property="fear">
-                <color-mapping max=40 color="<%= palette[1] %>"></color-mapping>
-                <color-mapping min=40.1 max=45 color="<%= palette[3] %>"></color-mapping>
-                <color-mapping min=45.1 max=50 color="<%= palette[5] %>"></color-mapping>
-                <color-mapping min=50.1 color="<%= palette[7] %>"></color-mapping>
+                <color-mapping max=42.4 color="<%= palette[2] %>"></color-mapping>
+                <color-mapping min=42.5 max=47.9 color="<%= palette[3] %>"></color-mapping>
+                <color-mapping min=48 max=53.4 color="<%= palette[5] %>"></color-mapping>
+                <color-mapping min=53.5 color="<%= palette[7] %>"></color-mapping>
               </geo-palette>
               <geo-popup>
                 <h1 class="bigheader">{{name}}</h1>
@@ -53,22 +51,62 @@
 
         </div>
         <aside class="legend">
-          <h1>Average fear rating of residents (0 to 100)</h1>
+          <h1>Average fear rating of residents</h1>
           <ul class="scale">
             <li>
-              <span class="block" style="background-color: <%= palette[1] %>"></span> 40 or less</li>
+              <span class="block" style="background-color: <%= palette[2] %>"></span> 36.9 - 42.4</li>
             <li>
-              <span class="block" style="background-color: <%= palette[3] %>"></span> 40.1-45</li>
+              <span class="block" style="background-color: <%= palette[3] %>"></span> 42.5 to 47.9</li>
             <li>
-              <span class="block" style="background-color: <%= palette[5] %>"></span> 45.1-50</li>
+              <span class="block" style="background-color: <%= palette[5] %>"></span> 48 to 53.4</li>
             <li>
-              <span class="block" style="background-color: <%= palette[7] %>"></span> 50.1 or more</li>
+              <span class="block" style="background-color: <%= palette[7] %>"></span> 53.5 to 58.9</li>
           </ul>
         </aside>
       </div>
+      <div class="aspect-ratio-outer">
+        <div class="aspect-ratio-inner">
 
+          <leaflet-map zoom=10.5>
+            <map-options>{ "zoomSnap": 0.5 }</map-options>
+            <tile-layer layer="cartoPositronBlank"></tile-layer>
+            <geo-json src="assets/crime-fear.geo.json">
+              <geo-style>{ "weight": 1, "color": "#000", "opacity":0.2, "fillOpacity":0.7 }</geo-style>
+              <% var palette = ['#fcfbfd','#efedf5','#dadaeb','#bcbddc','#9e9ac8','#807dba','#6a51a3','#54278f','#3f007d'] %>
+              <geo-palette property="crimeRate">
+                <color-mapping max=145 color="<%= palette[2] %>"></color-mapping>
+                <color-mapping min=146 max=267 color="<%= palette[3] %>"></color-mapping>
+                <color-mapping min=268 max=389 color="<%= palette[5] %>"></color-mapping>
+                <color-mapping min=390 color="<%= palette[7] %>"></color-mapping>
+              </geo-palette>
+              <geo-popup>
+                <h1 class="bigheader">{{name}}</h1>
+                <ul>
+                  <li> Average fear rating of residents: {{fear}}
+                  <li> Crimes per 1,000 people (2016-2017): {{crimeRate}}
+                </ul>
+              </geo-popup>
+            </geo-json>
+          </leaflet-map>
 
-      <div class="source">Source: Seattle University, Seattle Police Department, U.S. Census
+        </div>
+        <aside class="legend">
+          <h1>Crime rate</h1>
+          <ul class="scale">
+            <li>
+              <span class="block" style="background-color: <%= palette[2] %>"></span> 23 - 145</li>
+            <li>
+              <span class="block" style="background-color: <%= palette[3] %>"></span> 146 - 267</li>
+            <li>
+              <span class="block" style="background-color: <%= palette[5] %>"></span> 268 - 389</li>
+            <li>
+              <span class="block" style="background-color: <%= palette[7] %>"></span> 390 - 512</li>
+          </ul>
+        </aside>
+      </div>
+      </div>
+
+      <div class="source">Sources: Seattle University, Seattle Police Department, U.S. Census
         <span class="credit">Alec Glassford / The Seattle Times</div>
     </div>
   </responsive-child>

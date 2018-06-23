@@ -1,5 +1,5 @@
 @import "seattletimes";
-@aspect-ratio: 7/10;
+@aspect-ratio: 7/5;
 @legend-length: 5; //number of legend items
 body {
   font-family: @df-sans;
@@ -7,6 +7,13 @@ body {
   margin: 0 auto;
   max-width: 630px;
   font-size: 16px;
+}
+.adjacent-maps {
+  .display-flex();
+  .justify-content(space-between);
+  @media @mobile {
+    display: block;
+  }
 }
 .outmost {
   border-top: 1px solid @df-border-gray;
@@ -18,11 +25,17 @@ body {
   clear: both;
 }
 .aspect-ratio-outer {
-  width: 100%;
+  width: 49%;
   position: relative;
+  @media @mobile {
+    width: 100%;
+  }
   .aspect-ratio-inner {
     padding-bottom: percentage(@aspect-ratio);
     position: relative;
+    @media @mobile {
+      padding-bottom: percentage(@aspect-ratio / 2);
+    }
   }
   leaflet-map {
     position: absolute;

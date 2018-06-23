@@ -3,17 +3,14 @@ require("component-leaflet-map");
 require("component-responsive-frame");
 
 //get access to Leaflet and the map
-var element = document.querySelector("leaflet-map");
-var L = element.leaflet;
-var map = element.map;
+var elements = document.querySelectorAll("leaflet-map");
+var L = elements[0].leaflet;
+var map1 = elements[0].map;
+var map2 = elements[1].map;
 
-//ICH code for popup template if needed----------
-// var ich = require("icanhaz");
-// var templateFile = require("./_popup.html");
-// ich.addTemplate("popup", templateFile);
+require('leaflet.sync');
+map1.sync(map2);
+map2.sync(map1);
 
-// var onEachFeature = function(feature, layer) {
-//   layer.bindPopup(ich.popup(feature.properties))
-// };
-
- map.scrollWheelZoom.disable();
+map1.scrollWheelZoom.disable();
+map2.scrollWheelZoom.disable();

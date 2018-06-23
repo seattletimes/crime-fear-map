@@ -23,6 +23,7 @@
     "grunt-contrib-connect": "^0.10.1",
     "grunt-contrib-watch": "^0.6.1",
     "icanhaz": "^0.10.3",
+    "leaflet.sync": "^0.2.4",
     "less": "^2.0.0",
     "mime": "^1.2.11",
     "shelljs": "^0.5.1",
