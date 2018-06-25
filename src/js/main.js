@@ -3,14 +3,21 @@ require("component-leaflet-map");
 require("component-responsive-frame");
 
 //get access to Leaflet and the map
-var elements = document.querySelectorAll("leaflet-map");
+var elements = Array.prototype.slice.call(document.querySelectorAll("leaflet-map"));
 var L = elements[0].leaflet;
-var map1 = elements[0].map;
-var map2 = elements[1].map;
+var maps = elements.map(e => e.map)
 
+// Sync maps
 require('leaflet.sync');
-map1.sync(map2);
-map2.sync(map1);
+maps.forEach((map, i) => {
+  // Sync map with other
+  map.sync(maps[(i + 1) % 2]);
 
-map1.scrollWheelZoom.disable();
-map2.scrollWheelZoom.disable();
+  map.scrollWheelZoom.disable();
+
+  // Add labels
+  var topLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png', {
+    opacity: 0.8,
+    pane: "markerPane",
+  }).addTo(map);
+});
