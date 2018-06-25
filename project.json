@@ -1,16 +1,16 @@
 {
   "s3": {
     "stage": {
-      "bucket": "",
-      "path": ""
+      "bucket": "projects-staging.seattletimes.com",
+      "path": "splashy-spar"
     },
     "live": {
       "bucket": "",
       "path": ""
     }
   },
-  "title": "",
-  "description": "",
+  "title": "How much do your nieghbors fear crime?",
+  "description": "A new Seattle University survey asked city residents how much they fear crime in their neighborhood, on a scale from 0 to 100. SODO had the highest fear, and Fremont the lowest.",
   "url": "",
   "slug": "",
   "tags": []
