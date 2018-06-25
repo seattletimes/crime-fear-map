@@ -77,11 +77,11 @@
               <geo-style>{ "weight": 1, "color": "#000", "opacity":0.2, "fillOpacity":0.7 }</geo-style>
               <% palette = ['#f7fbff','#c6dbef','#6baed6','#2171b5','#08306b']; %>
               <geo-palette property="crimeRate">
-                <color-mapping max=110 color="<%= palette[0] %>"></color-mapping>
-                <color-mapping min=111 max=220 color="<%= palette[1] %>"></color-mapping>
-                <color-mapping min=221 max=330 color="<%= palette[2] %>"></color-mapping>
-                <color-mapping min=331 max=440 color="<%= palette[3] %>"></color-mapping>
-                <color-mapping min=441 max=550 color="<%= palette[4] %>"></color-mapping>
+                <color-mapping max=40 color="<%= palette[0] %>"></color-mapping>
+                <color-mapping min=41 max=60 color="<%= palette[1] %>"></color-mapping>
+                <color-mapping min=61 max=80 color="<%= palette[2] %>"></color-mapping>
+                <color-mapping min=81 max=100 color="<%= palette[3] %>"></color-mapping>
+                <color-mapping min=101 color="<%= palette[4] %>"></color-mapping>
               </geo-palette>
               <geo-popup>
                 <h1 class="bigheader">{{name}}</h1>
@@ -98,15 +98,15 @@
           <h1>Rate of crime</h1>
           <ul class="scale">
             <li>
-              <span class="block" style="background-color: <%= palette[0] %>"></span> 0 - 110</li>
+              <span class="block" style="background-color: <%= palette[0] %>"></span> 21 - 40</li>
             <li>
-              <span class="block" style="background-color: <%= palette[1] %>"></span> 111 - 220</li>
+              <span class="block" style="background-color: <%= palette[1] %>"></span> 41 - 60</li>
             <li>
-              <span class="block" style="background-color: <%= palette[2] %>"></span> 221 - 330</li>
+              <span class="block" style="background-color: <%= palette[2] %>"></span> 61 - 80</li>
             <li>
-              <span class="block" style="background-color: <%= palette[3] %>"></span> 331 - 440</li>
+              <span class="block" style="background-color: <%= palette[3] %>"></span> 81 - 100</li>
             <li>
-              <span class="block" style="background-color: <%= palette[4] %>"></span> 441 - 550</li>
+              <span class="block" style="background-color: <%= palette[4] %>"></span> 100 or more</li>
           </ul>
         </aside>
       </div>
