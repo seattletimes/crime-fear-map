@@ -5,13 +5,14 @@
       "path": "splashy-spar"
     },
     "live": {
-      "bucket": "",
-      "path": ""
+      "bucket": "projects.seattletimes.com",
+      "path": "2018/fyi-guy/fear-of-crime"
     }
   },
   "title": "How much do your nieghbors fear crime?",
-  "description": "A new Seattle University survey asked city residents how much the fear crime in their neighborhood, on a scale from 0 to 100. In some neighborhoods with a high level of fear, the crime rates are well below average. Note: Crime rate is an annual average (2016-2017), per 1,000 people.",
-  "url": "",
-  "slug": "",
-  "tags": []
+  "description": "A new Seattle University survey asked city residents how much they fear crime in their neighborhood, on a scale of 0 to 100. In some neighborhoods with a high level of fear, the crime rates are well below average. Note: Crime rate is an annual average (2016-2017) of all reported crimes, per 1,000 people.",
+  "url": "https://projects.seattletimes.com/2018/fyi-guy/fear-of-crime/",
+  "slug": "fear-of-crime",
+  "tags": [],
+  "production": true
 }
